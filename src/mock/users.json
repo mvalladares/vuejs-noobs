@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "5b5b80d3c65da700048e6acb",
+      "first_name": "Alejandro",
+      "last_name": "Vivas",
+      "gender": "Masculino",
+      "email": "avivas@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-07-27T20:30:11.541Z",
+      "updatedAt": "2018-07-27T20:30:11.541Z",
+      "__v": 0
+    },
+    {
+      "id": "5b5b80f1c65da700048e6acd",
+      "first_name": "Jose",
+      "last_name": "Muñoz",
+      "gender": "Masculino",
+      "email": "jmunoz@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-07-27T20:30:41.031Z",
+      "updatedAt": "2018-07-27T20:30:41.031Z",
+      "__v": 0
+    },
+    {
+      "id": "5b5b80fec65da700048e6ace",
+      "first_name": "Deidy",
+      "last_name": "Perez",
+      "gender": "Femenino",
+      "email": "dperez@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-07-27T20:30:54.173Z",
+      "updatedAt": "2018-07-27T20:30:54.173Z",
+      "__v": 0
+    },
+    {
+      "id": "5b5b810bc65da700048e6acf",
+      "first_name": "Alvaro",
+      "last_name": "Emparan",
+      "gender": "Masculino",
+      "email": "aemparan@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-07-27T20:31:07.240Z",
+      "updatedAt": "2018-07-27T20:31:07.240Z",
+      "__v": 0
+    },
+    {
+      "id": "5b5b81c5c65da700048e6ad0",
+      "first_name": "Miguel",
+      "last_name": "Valladares",
+      "gender": "Masculino",
+      "email": "mvalladares@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-07-27T20:34:13.197Z",
+      "updatedAt": "2018-07-27T20:34:13.197Z",
+      "__v": 0
+    },
+    {
+      "id": "5b64896ef63663000419c174",
+      "first_name": "Cesar",
+      "last_name": "Sanhueza",
+      "gender": "Otro",
+      "email": "cesar@chileautos.cl",
+      "image": "https://vignette.wikia.nocookie.net/lossimpson/images/d/db/SimpsonJesus.jpg/revision/latest?cb=20110424173018&path-prefix=es",
+      "ip_address": "170.0.0.1",
+      "createdAt": "2018-08-03T16:57:18.045Z",
+      "updatedAt": "2018-08-03T16:57:18.045Z",
+      "__v": 0
+    }
+  ]
+}

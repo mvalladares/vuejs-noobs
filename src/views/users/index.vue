@@ -3,8 +3,9 @@
     <h1>Users</h1>
     <button @click="addUser()">Nuevo</button>
     <ul>
-        <li v-for="user in users" :key="user._id">
-         {{ user.first_name }} | <button @click="editUser(user)">Editar</button> | <button @click="deleteUser(user._id)" >Borrar</button>
+        <li v-for="user in users" :key="user.id">
+         {{ user.first_name }} | <button @click="editUser(user)">Editar</button> | <button @click="deleteUser(user.id)" >Borrar</button>
+         <router-link :to="'/user/'+user.slug">Ver detalles</router-link>
         </li>
     </ul>
     <div v-show="showForm">
@@ -24,26 +25,26 @@ export default {
   },
   data() {
     return {
-    showForm:false,
+      showForm: false,
       users: {},
       msg: "Para Miguel",
-      url: "https://dry-cove-41154.herokuapp.com/",
-      user:{
-          first_name: "",
-          last_name: "",
-          email: "",
-          gender: "",
-          _id: "0"
+      //url: "https://dry-cove-41154.herokuapp.com/",
+      url: "http://localhost:3001/",
+      user: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        gender: ""
       },
-      action:"post"
+      action: "post"
     };
   },
   methods: {
     getUsers() {
-      axios.get(this.url + "users").then(response => {
-        this.users = response.data;
-        //
-      });
+        axios.get(this.url + "users").then(response => {
+          console.log(_.filter(response.data, (filter)=>{ return filter.first_name == "Alejandro"; }));
+          this.users = response.data;
+        });
     },
     deleteUser(id) {
       axios.delete(this.url + "users/" + id).then(response => {
@@ -52,16 +53,15 @@ export default {
     },
     editUser(user) {
       this.user = user;
-    }, 
-    addUser(){
-        this.showForm = true;
-        this.user = {
+    },
+    addUser() {
+      this.showForm = true;
+      this.user = {
         first_name: "",
-          last_name: "",
-          email: "",
-          gender: "",
-          _id: "0"
-        };
+        last_name: "",
+        email: "",
+        gender: ""
+      };
     }
   },
   created() {

@@ -3,8 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+window._ = require('underscore')
 Vue.config.productionTip = false
+
+//css
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+//js
+
 
 /* eslint-disable no-new */
 new Vue({

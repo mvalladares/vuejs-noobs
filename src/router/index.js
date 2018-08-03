@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Users from '@/views/users/index'
+import UserDetails from '@/views/users/details'
 
 Vue.use(Router)
 
@@ -11,6 +13,10 @@ export default new Router({
       path: '/',
       name: 'users',
       component: Users
+    },
+    {
+      path:'/user/:slug',
+      component: UserDetails
     }
   ]
 })

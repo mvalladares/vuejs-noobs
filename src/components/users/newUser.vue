@@ -6,6 +6,7 @@
             <input type="text" v-model="user.last_name" placeholder="Apellido">
             <input type="text" v-model="user.email" placeholder="Email">
             <input type="text" v-model="user.gender" placeholder="Genero">
+            <input type="hidden" value="test-test" v-model="user.slug">
             <button type="submit" >Guardar usuario</button>
         </form>
   <!--       <ul v-if="errors">
@@ -20,16 +21,21 @@ export default {
   data() {
     return {
       //user: {},
-      errors: {}
+      errors: {},
+      slug: ""
     };
   },
   props: ["msg", "url", "user", "action"],
   methods: {
     addUser() {
-      axios
-        [this.user._id != "0" ? "put" : "post"](this.url + "users/" + (this.user._id != "0" ? this.user._id : ""), this.user)
+      axios[this.user.id ? "put" : "post"](
+        this.url + "users/" + (this.user.id ? this.user.id : ""),
+        this.user
+      )
         .then(response => {
-          console.log(this.user);
+          if (response.data.id) {
+            this.$parent.users.push(response.data);
+          }
         })
         .catch(response => {
           this.errors = response.data;
@@ -38,13 +44,13 @@ export default {
     }
   },
   beforeUpdate() {
-    console.log("HOLA");
+    //console.log("HOLA");
   },
   updated() {
-    console.log("HOLA 2");
+    this.user.slug = this.user.first_name + "-" + this.user.last_name;
   },
   mounted() {
-    console.log("HOLA 3");
+    //console.log("HOLA 3");
   }
 };
 </script>
