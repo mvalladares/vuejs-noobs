@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="addUser()" >
-            {{msg}}
+            <h2>{{msg}}</h2>
             <input type="text" v-model="user.first_name" placeholder="Nombre" >
             <input type="text" v-model="user.last_name" placeholder="Apellido">
             <input type="text" v-model="user.email" placeholder="Email">
@@ -14,31 +14,38 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-    data(){
-        return{
-            user:{},
-            errors:{}
-        }
-    },
-    props:['msg','url'],
-    methods:{
-        addUser(){
-
-            console.log(this.user)
-            axios.post(this.url + 'users', this.user)
-            .then(response=> {
-                console.log(this.user)
-            })
-            .catch(response=>{
-                this.errors = response.data;
-                console.log(this.errors);
-            });
-            
-        }
+  data() {
+    return {
+      //user: {},
+      errors: {}
+    };
+  },
+  props: ["msg", "url", "user", "action"],
+  methods: {
+    addUser() {
+      axios
+        [this.user._id != "0" ? "put" : "post"](this.url + "users/" + (this.user._id != "0" ? this.user._id : ""), this.user)
+        .then(response => {
+          console.log(this.user);
+        })
+        .catch(response => {
+          this.errors = response.data;
+          console.log(this.errors);
+        });
     }
-}
+  },
+  beforeUpdate() {
+    console.log("HOLA");
+  },
+  updated() {
+    console.log("HOLA 2");
+  },
+  mounted() {
+    console.log("HOLA 3");
+  }
+};
 </script>
 
