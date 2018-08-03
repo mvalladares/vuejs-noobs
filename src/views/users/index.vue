@@ -1,8 +1,8 @@
 <template>
 <div>
     <h1>Users</h1>
-    <button>Nuevo</button>
-    <hr>
+    <!-- <button @click="addUser()">Nuevo</button> -->
+    <new-user :url="url" :msg="msg" />
     <ul>
         <li v-for="user in users" :key="user._id">
          {{ user.first_name }} | <button>Editar</button> | <button @click="deleteUser(user._id)" >Borrar</button>
@@ -12,33 +12,36 @@
     
 </template>
 <script>
-let url = "https://dry-cove-41154.herokuapp.com/";
+import newUser from "@/components/users/newUser";
 
 import axios from "axios";
 
 export default {
+  components: {
+    newUser
+  },
   data() {
     return {
       users: {},
-      data:''
-    }
+      msg:'Para Miguel',
+      url:'https://dry-cove-41154.herokuapp.com/'
+    };
   },
   methods: {
     getUsers() {
-      axios.get(url + "users").then(response => {
-        this.users = response.data
-        //console.log(this.users);
+      axios.get(this.url + "users").then(response => {
+        this.users = response.data;
+        //
       });
     },
-    deleteUser(id){
-        axios.delete(url + 'users/'+ id)
-        .then(response=>{
-            this.getUsers();
-        })
+    deleteUser(id) {
+      axios.delete(url + "users/" + id).then(response => {
+        this.getUsers();
+      });
     }
   },
-  created(){
-      this.getUsers();
+  created() {
+    this.getUsers();
   }
 };
 </script>
